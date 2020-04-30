@@ -1,0 +1,34 @@
+// g++ hello.cpp -o hello & hello
+#include<bits/stdc++.h>
+#include<iostream>
+using namespace std;
+#define MP make_pair
+typedef long long ll;
+typedef vector<int> vi;
+typedef pair<int,int> pii;
+void test();
+ll sol(ll a,ll n)
+{if(n==1)return a;
+ll sa=sol(a,n/2);
+if(n&1)return a*(sa*sa);
+return sa*sa;
+}
+int main()
+{
+//freopen("input.in","r",stdin);freopen("output.in","w",stdout);
+int t=1;
+//   cin>>t;
+for(int i=1;i<=t;i++)
+{    
+//	cout<<"Case #"<<i<<": ";
+	test();
+cout<<endl;
+}
+return 0;
+}
+void test() 
+{
+    ll a,b;
+cin>>a>>b;
+cout<<sol(a,b);
+}
